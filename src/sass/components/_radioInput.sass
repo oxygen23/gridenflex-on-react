@@ -1,0 +1,47 @@
+[type="radio"]:checked,
+[type="radio"]:not(:checked)
+  position: absolute
+  left: -9999px
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+
+  position: relative
+  padding-right: 45px
+  cursor: pointer
+  display: inline-block
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before
+  content: ''
+  position: absolute
+  right: 0
+  top: 0
+  width: 34px
+  height: 34px
+  border: 3px solid white
+  border-radius: 100%
+  background: black
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after
+  content: ''
+  width: 18px
+  height: 18px
+  background: white
+  position: absolute
+  top: 8px
+  right: 8px
+  border-radius: 100%
+  -webkit-transition: all 0.2s ease-out
+  transition: all 0.2s ease-out
+
+[type="radio"]:not(:checked) + label:after
+  opacity: 0
+  -webkit-transform: scale(0)
+  transform: scale(0)
+
+[type="radio"]:checked + label:after
+  opacity: 1
+  -webkit-transform: scale(1)
+  transform: scale(1)

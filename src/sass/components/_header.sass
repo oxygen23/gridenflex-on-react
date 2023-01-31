@@ -1,0 +1,42 @@
+@import 'button'
+
+.header
+  height: 99px
+  margin-bottom: 113px
+  &.fixed
+    position: fixed
+    top: 0
+    width: 100%
+  &__container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    max-width: 1791px
+    height: 100%
+    margin: 0 auto
+    padding: 0 15px
+  &__right-block
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    width: 618px
+    height: 60px
+  &__left-block a
+    display: flex
+    align-items: center
+    justify-content: center
+  &__nav-links
+    font-family: 'InterR'
+    font-size: 24px
+
+    width: 337px
+    height: 29px
+  & ul
+    display: flex
+    justify-content: space-between
+    & li
+      transition: color .2s ease-in-out
+    & li:hover
+      color: $fiolColor

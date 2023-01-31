@@ -1,0 +1,26 @@
+.button
+  font-family: 'InterM'
+  font-size: 16px
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 181px
+  height: 60px
+
+  color: white
+  border: 2px solid white
+  border-radius: 15px
+  
+  background: transparent
+  transition: all .2s linear
+  &:hover
+    background: rgba(255, 255, 255, 0.1)
+
+  &.review
+    color: $fiolColor
+    border: solid 2px $fiolColor
+    transition: all .2s linear
+    &:hover
+      background: rgba(151, 71, 255, 0.1)
