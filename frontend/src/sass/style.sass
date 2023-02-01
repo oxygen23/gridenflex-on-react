@@ -1,0 +1,572 @@
+@import 'normilize'
+@import 'fonts'
+@import 'variable'
+@import 'components/all'
+
+.keyword_fiol
+  color: $fiolColor
+.keyword_green
+  color: $greenColor
+
+html
+  scroll-behavior: smooth
+
+body
+  font-family: InterM
+  font-size: 32px
+  background: #000
+.container
+  width: 100%
+  max-width: 1403px
+  height: 100%
+  margin: 0 auto
+  padding: 0 15px
+.first-section
+  padding-top: 213px
+  color: white
+  height: 100vh
+  width: 100%
+  background: no-repeat center/contain url('/img/Frame 13.png') , url('/img/home linea.png') center no-repeat
+  background-color: black
+  background-size: cover
+  &__container
+    height: unset
+  &__slogan
+    font-size: 70px
+    font-family: 'Intro'
+    margin-bottom: 40px
+  &__left-block
+    & span
+      font-family: 'InterR'
+      text-transform: uppercase
+.second-section
+  color: white
+  padding: 100px 0 110px 0
+  background: #000
+  &__slogan
+    font-family: 'Intro'
+    font-size: 48px
+    margin-bottom: 67px
+  &__cards
+    margin-bottom: 45px
+    &-item
+      border: solid 2px white
+      border-radius: 20px
+      display: flex
+      justify-content: space-between
+      height: 436px
+
+      padding-left: 78px
+      overflow: hidden
+      &-title
+        margin-top: 77px
+        font-size: 64px
+        font-weight: 700
+      &-slider
+        margin-top: 80px
+        font-size: 24px
+        font-weight: 400
+        width: 639px
+        height: 145px
+      &-num
+        margin-top: 73px
+        font-family: 'Intro'
+        font-size: 350px
+        line-height: 350px
+        transform: translateX(45px)
+  &__change-card
+    font-size: 32px
+    font-weight: 500
+    width: 635px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: space-between
+// .third-section
+//   padding: 91px 0 0 0
+//   &__container
+//   &__title
+//     font-family: 'Intro'
+//     font-size: 48px
+//     margin-bottom: 73px
+//   &__main-roadmap
+//     position: relative
+//     z-index: 1
+//     &_item:after
+//       content: ""
+//       height: 200px
+//       width: 100px
+//       border-radius: 110px 0 0 110px
+//       border: 15px solid #46b2bc
+//       border-right: none
+//       position: absolute
+//       left: 0
+//       top: 0
+//       z-index: -1
+.fourth-section
+  font-family: 'InterR'
+  display: grid
+  grid-template-columns: 0.5fr 30px 1fr 30px 0.9fr 30px 0.9fr 0.5fr
+  grid-template-rows: 430px 25px 450px 89px 450px 242px
+  grid-template-areas: '. . title . picture picture picture .' '. . . . . . . .'  '. . picture2 . picture3 . picture4 .' '. . title2 . title3 . title4 .' '. . picture5 picture5 picture5 . picture6 .' '. . title5 . title-link . title6 .'
+  color: white
+  background: black
+  &__grid
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    border: 1px solid #1e1e1e
+    width: 100%
+    height: 100%
+    & img
+      border: 1px solid white
+      border-radius: 10px
+      width: 100%
+      height: 100%
+    & span
+      font-family: 'Intro'
+    &:nth-child(1), &:nth-child(9), &:nth-child(17), &:nth-child(25), &:nth-child(33), &:nth-child(41)
+      border-left: none
+    &:nth-child(3)
+      padding-top: 173px
+      padding-bottom: 56px
+      font-size: 48px
+      grid-area: title
+    &:nth-child(5)
+      grid-area: picture
+    &:nth-child(6)
+      grid-area: picture
+    &:nth-child(7)
+      grid-area: picture
+    &:nth-child(19)
+      grid-area: picture2
+    &:nth-child(21)
+      grid-area: picture3
+    &:nth-child(23)
+      grid-area: picture4
+    &:nth-child(27)
+      grid-area: title2
+      justify-content: center
+    &:nth-child(29)
+      grid-area: title3
+      justify-content: center
+    &:nth-child(31)
+      grid-area: title4
+      justify-content: center
+    &:nth-child(35)
+      grid-area: picture5
+    &:nth-child(36)
+      grid-area: picture5
+    &:nth-child(37)
+      grid-area: picture5
+    &:nth-child(39)
+      grid-area: picture6
+    &:nth-child(43)
+      grid-area: title5
+      p
+        margin-top: 25px
+        margin-left: 7px
+    &:nth-child(45)
+      grid-area: title-link
+      justify-content: center
+      align-items: center
+
+    &:nth-child(47)
+      grid-area: title6
+      p
+        margin-top: 25px
+        margin-left: 8px
+
+    &:nth-child(-n + 8)
+      border-top: none
+    &:nth-child(n + 1)
+      border-right: none
+      border-bottom: none
+.fifth-section
+  height: 900px
+  margin-left: 61px
+  margin-bottom: 83px
+  background: #EDEDED
+  width: calc( 100% - 61px )
+  display: grid
+  grid-template-columns: 1fr .56fr .8fr 1fr 1.5fr .7fr
+  grid-template-rows: 1fr 1.5fr 2fr
+  grid-template-areas: '. . . . . .' '. num1 desc1 num2 desc2 .' '. num3 desc3 num4 desc4 .'
+  position: relative
+  &__grid
+    border: 1px solid rgba(0, 0, 0, 0.04)
+    font-family: 'InterR'
+    display: flex
+    justify-content: center
+    font-size: 24px
+    // overflow: hidden
+    &-child
+      position: absolute
+      top: 65px
+      left: 221px
+      &-title
+        font-family: 'Intro'
+        font-size: 48px 
+    &:nth-child(8)
+      grid-area: num1
+      font-family: 'Intro'
+      font-size: 300px
+      color: $greenColor
+    &:nth-child(9)
+      grid-area: desc1
+    &:nth-child(10)
+      grid-area: num2
+      font-family: 'Intro'
+      font-size: 300px
+      justify-content: end
+      color: $fiolColor
+    &:nth-child(11)
+      grid-area: desc2
+    &:nth-child(14)
+      grid-area: num3
+      font-family: 'Intro'
+      font-size: 300px
+      justify-content: end
+      color: $fiolColor
+    &:nth-child(15)
+      grid-area: desc3
+    &:nth-child(16)
+      grid-area: num4
+      font-size: 300px
+      justify-content: end
+      font-family: 'Intro'
+      color: $fiolColor
+    &:nth-child(17)
+      grid-area: desc4
+    &:nth-child(-n + 6)
+      border-top: none
+
+    &:nth-child(n + 1)
+      border-right: none
+      border-bottom: none
+
+.sixth-section
+  margin-left: 61px
+  margin-bottom: 111px
+  background: white
+  padding: 95px 0 162px 0
+  &__container
+    display: flex
+    justify-content: space-between
+  &__title
+    font-family: 'Intro'
+    font-size: 48px
+    margin-bottom: 50px
+  &__left-block
+    position: relative
+    width: 744px
+  &__slider
+    
+    &-item
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-evenly
+      width: 450px
+      height: 675px
+      background-color: #000
+      background-image: url('/img/line-bg.png')
+      color: white
+      overflow: hidden
+      border-radius: 15px
+      border: 1px solid $fiolColor
+      &_name-bg
+        z-index: 0
+        position: absolute
+        font-family: 'Intro'
+        font-size: 128px
+        transform: rotate(-90deg)
+        bottom: 320px
+        left: 106px
+        color: rgba(255, 255, 255, 0.1)
+        line-height: 97px
+        cursor: default
+      &_title
+        font-family: 'Intro'
+        font-size: 32px
+        text-align: center
+      &_link
+        font-family: 'InterM'
+        background: none
+        color: white
+      &_img
+        position: relative
+      &_price
+        font-family: 'Intro'
+        & span
+          color: $greenColor
+          font-size: 48px
+      &_link
+        font-family: 'InterM'
+        font-size: 16px
+  &__right-block
+    width: 575px
+    &_title
+      font-family: 'Intro'
+      margin-bottom: 35px
+    &_grid
+      display: grid
+      grid-template-columns: repeat(2, 257px)
+      grid-template-rows: repeat(3, 180px)
+      grid-row-gap: 30px
+      grid-column-gap: 30px
+      justify-content: center
+      &-item
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-evenly
+        &:nth-child(1)
+          background-image: url('/img/seo.png')
+        &:nth-child(2)
+          background-image: url('/img/crossBrowser.png')
+        &:nth-child(3)
+          background-image: url('/img/hostDom.png')
+        &:nth-child(4)
+          background-image: url('/img/adminPanel.png')
+        &:nth-child(5)
+          background-image: url('/img/learn.png')
+        &:nth-child(6)
+          background-image: url('/img/warranty.png')
+        &_title
+          text-align: center
+          font-family: 'InterSemiBold'
+          font-size: 20px
+          color: $greenColor
+        &_suptitle
+          text-align: center
+          font-size: 16px
+          font-family: 'InterR'
+          color: white
+.seventh-section
+  display: grid
+  grid-template-columns: 0.5fr 5fr 0.5fr
+  grid-template-rows: 160px 585px 74px
+  grid-template-areas: '. title .' '. slider .' '. . .'
+  &__grid-item
+    color: white
+    border: 1px solid #1e1e1e
+    &:nth-child(1)
+      font-size: 48px
+      font-family: 'Intro'
+      padding-left: 106px
+      padding-bottom: 17px
+      padding-top: 90px
+      grid-area: title
+      border-top: none
+      border-left: none
+      border-right: none
+
+    &:nth-child(2)
+      grid-area: slider
+      border-top: none
+      border-left: none
+      border-right: none
+    &:nth-child(3)
+      border-top: none
+      border-left: none
+    &:nth-child(4)
+      border-top: none
+      border-right: none
+    &:nth-child(5)
+      border-left: none
+      border-top: none
+    &:nth-child(6)
+      border-right: none
+      border-top: none
+    &:nth-child(7)
+      border-left: none
+      border-bottom: none
+      border-top: none
+    &:nth-child(8)
+      border: none
+    &:nth-child(9)
+      border-bottom: none
+      border-right: none
+      border-top: none
+    &_slider
+      display: flex
+      justify-content: space-between
+      padding: 33px 16px 0 16px
+      &-item
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-direction: column
+        padding-top: 200px
+        padding-bottom: 50px
+        position: relative
+        width: 350px
+        height: 450px
+        border: 1px solid white
+        border-radius: 15px
+        overflow: hidden
+        & img
+          position: absolute
+          top: 0
+          right: 0
+          z-index: -1
+        &_post
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 224px
+          height: 44px
+          font-family: 'InterM' 
+          font-size: 24px
+          border-radius: 20px
+          background: $fiolColor
+          margin-bottom: 13px
+        &_slogan
+          text-align: center
+          font-size: 24px
+          font-family: 'InterL'
+.eighth-section
+  padding: 100px 0 
+  background: white
+  &__container
+  &__title
+    font-family: 'Intro'
+    font-size: 48px
+    margin-bottom: 50px
+  &__slider
+    &-item
+      position: relative
+      overflow: hidden
+      width: 435px
+      height: 317px
+      border: 4px solid $fiolColor
+      border-radius: 20px
+      padding: 38px 25px
+      &_up-block
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 30px
+        &-left
+          width: 145px
+          display: flex
+          justify-content: space-between
+          align-items: center
+      &_flexbox
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        font-family: 'InterM'
+        font-size: 16px
+        height:90%
+      &_avatar
+        & img
+          border-radius: 50%
+      &_name
+        color: $fiolColor
+      &_company
+        font-family: 'InterL'
+      &_stars
+        width: 148px
+        height: 32px
+        border-radius: 25px
+        background-color: $fiolColor
+        opacity: .5
+      &_description
+        font-size: 16px
+      &_decoration
+        position: absolute
+        &:nth-child(1)
+          top: -50px
+          right: 168px
+        &:nth-child(2)
+          top: 35%
+          right: -60px
+        &:nth-child(3)
+          bottom: -45px
+          left: 55px
+.feedback
+  position: relative
+  display: grid
+  grid-template-columns: 0.15fr 0.26fr 0.53fr 1fr 0.17fr
+  grid-template-rows: 299px 469px 124px
+  grid-template-areas: '. . . . .' '. . form gif .' '. . . . .'
+  color: white
+  &__grid
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    
+    &:nth-child(-n + 5)
+      border-top: none
+
+    &:nth-child(n + 1)
+      border-right: none
+      border-bottom: none
+
+    &-child
+      position: absolute
+      top: 100px
+      left: 260px
+      
+    &-title 
+      font-family: 'Intro'
+      font-size: 48px
+      margin-bottom: 22px
+      & span
+        color: $greenColor
+    &-suptitle
+      font-family: 'Interl'
+      font-size: 36px
+    &:nth-child(8)
+      grid-area: form
+      display: flex
+      justify-content: center
+      align-items: center
+    &:nth-child(9)
+      grid-area: gif
+    &-form
+      display: flex
+      flex-direction: column
+      &-input:not(:last-child)
+        margin-bottom: 30px 
+      &-input
+        padding-left: 10px
+        font-size: 20px
+        font-family: 'InterR'
+        display: flex
+        align-items: center
+        color: $greenColor
+        border-bottom: 3px solid rgba(3, 235, 111, 0.3)
+        background: none
+        height: 50px
+        width: 400px
+        transition: border-bottom .2s linear
+        &::-moz-placeholder
+          color: white
+        &::-webkit-input-placeholder
+          color: white
+        &:focus
+          border-bottom: 3px solid $greenColor
+      & button
+        width: 100%
+.footer
+  height: 140px
+  color: white
+  border-top: 3px solid rgba(255, 255, 255, 0.1)
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__social
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 200px
+    height: 50px
+    & a
+      display: flex
+      align-items: center
+  &__mail
+    font-family: 'InterSemiBold'
+    font-size: 20px
