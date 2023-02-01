@@ -12,5 +12,5 @@ app.listen(PORT, () => {
 });
 
 app.get('/api', (req, res) => {
-  res.json({ igor: 'pidor' });
+  res.json({ igor: 'хороший человек' });
 });

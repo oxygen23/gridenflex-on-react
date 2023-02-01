@@ -5,7 +5,7 @@ import { Header } from './components';
 import { Reviews } from './components';
 import { SliderTeam } from './components';
 import { GetData } from './components';
-import SliderServices from './components/SliderServices';
+import {SliderServices} from './components';
 import * as images from './img/images';
 
 function App() {

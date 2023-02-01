@@ -5,8 +5,8 @@ import 'swiper/css/bundle';
 function SliderServices() {
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={1.5}
+      spaceBetween={0}
+      slidesPerView={1.51}
       // onSlideChange={() => console.log('slide change')}
       // onSwiper={(swiper) => console.log(swiper)}
     >
@@ -34,7 +34,7 @@ function SliderServices() {
         <div className='sixth-section__slider-item'>
           <div className='sixth-section__slider-item_name-bg'>landing</div>
           <div className='sixth-section__slider-item_title'>
-            Одностраничный <br /> сайт
+            Корпоративный <br /> сайт
           </div>
           <div className='sixth-section__slider-item_img'>
             <img src={images.landing} alt='' />
@@ -54,7 +54,7 @@ function SliderServices() {
         <div className='sixth-section__slider-item'>
           <div className='sixth-section__slider-item_name-bg'>landing</div>
           <div className='sixth-section__slider-item_title'>
-            Одностраничный <br /> сайт
+            Интернет <br /> магазин
           </div>
           <div className='sixth-section__slider-item_img'>
             <img src={images.landing} alt='' />
