@@ -14,7 +14,3 @@ app.use('/api', apiRouter);
 app.listen(PORT, () => {
   console.log(`Server starting on port ${PORT}.`);
 });
-
-app.get('/api', (req, res) => {
-  res.json({ igor: 'хороший человек' });
-});
