@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import apiRouter from "./apiRouter.js";
+import database from './database.js'
 
 const PORT = 3001;
 
