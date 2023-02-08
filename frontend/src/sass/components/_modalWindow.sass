@@ -1,0 +1,114 @@
+.modal-window
+  display: grid
+  grid-template-columns: 38px 301px 441px 301px 38px
+  grid-template-rows: 31px 673px 36px
+  color: white
+  position: relative
+  &-grid
+    border: 1px solid rgba(255, 255, 255, 0.3)
+    & .button
+      width: 100%
+    &_title
+      position: absolute
+      font-family: 'Intro'
+      font-size: 40px
+      top: 103px
+      & span
+        color: $greenColor
+    &_form
+      display: flex
+      flex-direction: column
+      & input:not(:last-child)
+        margin-bottom: 30px
+      & input
+        padding-left: 10px
+        font-size: 20px
+        font-family: 'InterR'
+        display: flex
+        align-items: center
+        color: $greenColor
+        border-bottom: 3px solid rgba(3, 235, 111, 0.3)
+        background: none
+        height: 50px
+        width: 400px
+        transition: border-bottom .2s linear
+        &::-moz-placeholder
+          color: white
+        &::-webkit-input-placeholder
+          color: white
+        &:focus
+          border-bottom: 3px solid $greenColor
+      & textarea
+        overflow-y: scroll
+        resize: none
+        padding: 10px
+        font-size: 20px
+        font-family: 'InterR'
+        display: flex
+        align-items: center
+        color: $greenColor
+        border: 3px solid rgba(3, 235, 111, 0.3)
+        background: none
+        height: 150px
+        width: 400px
+        transition: border .2s linear
+        &::-moz-placeholder
+          color: white
+        &::-webkit-input-placeholder
+          color: white
+        &:focus
+          border: 3px solid $greenColor
+        &::-webkit-scrollbar
+          width: 4px
+          top: 0
+        &::-webkit-scrollbar-track
+          margin-top: 4px
+          margin-bottom: 4px
+          margin-right: 4px
+          background: transparent
+          border-radius: 30px
+        &::-webkit-scrollbar-thumb
+          margin-right: 4px
+          border-radius: 10px
+          background: $greenColor
+          cursor: pointer
+
+    &:nth-child(n + 1)
+      border-right: none
+    &:nth-child(1)
+      border-bottom: none
+      border-top-left-radius: 20px
+    &:nth-child(2)
+      border-bottom: none
+    &:nth-child(3)
+      border-bottom: none
+    &:nth-child(4)
+      border-bottom: none
+    &:nth-child(5)
+      border-bottom: none
+      border-right: 1px solid rgba(255, 255, 255, 0.3)
+      border-top-right-radius: 20px
+    &:nth-child(6)
+      border-bottom: none
+    &:nth-child(7)
+      border-bottom: none
+    &:nth-child(8)
+      display: flex
+      flex-direction: column
+      justify-content: space-evenly
+      align-items: center
+      border-bottom: none
+    &_center &_form
+      height: 325px
+    &_center
+      margin-top: 100px
+    &:nth-child(9)
+      border-bottom: none
+    &:nth-child(10)
+      border-bottom: none
+      border-right: 1px solid rgba(255, 255, 255, 0.3)
+    &:nth-child(11)
+      border-bottom-left-radius: 20px
+    &:nth-child(15)
+      border-right: 1px solid rgba(255, 255, 255, 0.3)
+      border-bottom-right-radius: 20px

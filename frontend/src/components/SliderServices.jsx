@@ -32,15 +32,15 @@ function SliderServices() {
       </SwiperSlide>
       <SwiperSlide>
         <div className='sixth-section__slider-item'>
-          <div className='sixth-section__slider-item_name-bg'>landing</div>
+          <div className='sixth-section__slider-item_name-bg'>corporate</div>
           <div className='sixth-section__slider-item_title'>
             Корпоративный <br /> сайт
           </div>
           <div className='sixth-section__slider-item_img'>
-            <img src={images.landing} alt='' />
+            <img src={images.corp} alt='' />
           </div>
           <div className='sixth-section__slider-item_price'>
-            от <span>50 000</span> руб
+            от <span>80 000</span> руб
           </div>
           <button className='sixth-section__slider-item_link'>
             Читать подробнее
@@ -52,15 +52,15 @@ function SliderServices() {
       </SwiperSlide>
       <SwiperSlide>
         <div className='sixth-section__slider-item'>
-          <div className='sixth-section__slider-item_name-bg'>landing</div>
+          <div className='sixth-section__slider-item_name-bg'>shop</div>
           <div className='sixth-section__slider-item_title'>
             Интернет <br /> магазин
           </div>
           <div className='sixth-section__slider-item_img'>
-            <img src={images.landing} alt='' />
+            <img src={images.shop} alt='' />
           </div>
           <div className='sixth-section__slider-item_price'>
-            от <span>50 000</span> руб
+            от <span>150 000</span> руб
           </div>
           <button className='sixth-section__slider-item_link'>
             Читать подробнее
