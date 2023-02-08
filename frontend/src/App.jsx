@@ -1,19 +1,55 @@
-import { Accordeon } from './components';
-import { Button } from './components';
-import { Feedback } from './components';
-import { Header } from './components';
-import { Reviews } from './components';
-import { SliderTeam } from './components';
-import { GetData } from './components';
-import {SliderServices} from './components';
+import {
+  Accordeon,
+  Button,
+  Feedback,
+  Header,
+  ModalThree,
+  Reviews,
+  SliderServices,
+  SliderTeam,
+} from './components';
 import * as images from './img/images';
 
 function App() {
+  const modalData = {
+    bodyReview: (
+      <div className='modal-window-grid'>
+        <div className='modal-window-grid_title'>Оставить отзыв</div>
+        <form action='' className='modal-window-grid_form'>
+          <input type='text' placeholder='Ваше имя' />
+          <input type='text' placeholder='Организация' />
+          <textarea placeholder='Отзыв'></textarea>
+        </form>
+        <div className='modal-window-grid_stars'></div>
+        <Button>Отправить</Button>
+      </div>
+    ),
+    bodyForm: (
+      <div className='modal-window-grid'>
+        <div className='modal-window-grid_title'>
+          давайте обсудим <span>ваш проект</span>
+        </div>
+        <div className='modal-window-grid_center'>
+          <form action='' className='modal-window-grid_form'>
+            <input type='text' placeholder='Ваше имя' />
+            <input type='email' placeholder='Email' />
+            <input type='text' placeholder='Telegram/VK' />
+            <input type='text' placeholder='Как вы узнали о нас?' />
+          </form>
+          <div className='modal-window-grid_stars'></div>
+          <Button>Отправить</Button>
+        </div>
+      </div>
+    ),
+  };
+
   return (
     <div className='App'>
       <div className='first-section'>
-        <GetData />
         <Header />
+        <div className='first-section__wave-lines'>
+          <img src={images.lines} alt='' />
+        </div>
         <div className='first-section__container container'>
           <div className='first-section__left-block'>
             <div className='first-section__slogan'>
@@ -22,11 +58,14 @@ function App() {
             </div>
             <Button>Написать нам</Button>
           </div>
-          <div className='first-section__right-block'></div>
+          <div className='first-section__right-block'>
+            <img src={images.gif} alt='' />
+          </div>
         </div>
       </div>
       <div className='second-section'>
         <Accordeon />
+        <ModalThree body={modalData.bodyReview} />
       </div>
       <div className='fourth-section' id='fourth-section'>
         <div className='fourth-section__grid'></div>

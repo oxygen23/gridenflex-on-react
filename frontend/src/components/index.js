@@ -6,3 +6,4 @@ export { default as Reviews } from './Reviews';
 export { default as SliderTeam } from './SliderTeam';
 export { default as GetData } from './GetData';
 export { default as SliderServices } from './SliderServices';
+export { default as ModalThree } from './ModalWindowFormReview';
