@@ -1,7 +1,6 @@
 import React, {useState, createContext} from "react";
 import PropTypes from "prop-types";
 
-import StarRatingLabel from "./components/StarRatingLabel";
 import StarsList from "./components/StarsList";
 
 export const StarRatingContext = createContext();
@@ -52,7 +51,6 @@ export default function StarRating({
         }}
       >
         <>
-          <StarRatingLabel />
           <StarsList />
         </>
       </StarRatingContext.Provider>
@@ -75,13 +73,13 @@ StarRating.propTypes = {
 
 StarRating.defaultProps = {
   defaultState: 0,
-  emptyColor: "grey",
-  fillColor: "#edaa10",
-  height: 53,
+  emptyColor: 'white',
+  fillColor: '#FFC000',
+  height: 20,
+  width: 20,
   labelText: (value) => `Rating is: ${value}`,
   maxValue: 5,
   onChangeHover: () => {},
   onChangeValue: () => {},
   readOnly: false,
-  width: 53,
 };

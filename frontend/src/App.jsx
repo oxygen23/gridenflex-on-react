@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { React, useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import {
   Accordeon,
   Button,
@@ -8,20 +11,50 @@ import {
   SliderServices,
   SliderTeam,
 } from './components';
+import StarRating from './components/StartRating/StarRating';
 import * as images from './img/images';
 
 function App() {
+  const [reviews, setReviews] = useState([]);
+  const [isModalReview, setIsModalReview] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { formData },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/getReviews').then(({ data }) => {
+      setReviews(data);
+    });
+  }, []);
   const modalData = {
     bodyReview: (
       <div className='modal-window-grid'>
         <div className='modal-window-grid_title'>Оставить отзыв</div>
-        <form action='' className='modal-window-grid_form'>
-          <input type='text' placeholder='Ваше имя' />
-          <input type='text' placeholder='Организация' />
-          <textarea placeholder='Отзыв'></textarea>
+        <form
+          className='modal-window-grid_form'
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <input
+            type='text'
+            placeholder='Ваше имя'
+            {...register('Ваше имя', {})}
+          />
+          <input
+            type='text'
+            placeholder='Организация'
+            {...register('Организация', {})}
+          />
+          <textarea
+            placeholder='Отзыв'
+            {...register('Отзыв', {})} />
+
+          <button className='button' type='submit'>
+            Оствить отзыв
+          </button>
         </form>
-        <div className='modal-window-grid_stars'></div>
-        <Button>Отправить</Button>
       </div>
     ),
     bodyForm: (
@@ -65,7 +98,15 @@ function App() {
       </div>
       <div className='second-section'>
         <Accordeon />
-        <ModalThree body={modalData.bodyReview} />
+        <ModalThree
+          body={modalData.bodyReview}
+          isVisible={isModalReview}
+          onClose={() => setIsModalReview(false)}
+        />
+        <button
+          className='button'
+          onClick={() => setIsModalReview(true)}
+        ></button>
       </div>
       <div className='fourth-section' id='fourth-section'>
         <div className='fourth-section__grid'></div>
@@ -259,7 +300,13 @@ function App() {
       <div className='eighth-section' id='reviews'>
         <div className='eighth-section__container container'>
           <div className='eighth-section__title'>Отзывы</div>
-          <Reviews />
+          <div className='eighth-section__slider'>
+            {reviews != null ? (
+              reviews.map((obj) => <Reviews {...obj} key={obj.id} />)
+            ) : (
+              <p>Отзывов нет</p>
+            )}
+          </div>
         </div>
       </div>
 

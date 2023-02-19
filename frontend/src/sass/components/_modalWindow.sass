@@ -17,8 +17,9 @@
         color: $greenColor
     &_form
       display: flex
+      margin-top: 130px
       flex-direction: column
-      & input:not(:last-child)
+      & input
         margin-bottom: 30px
       & input
         padding-left: 10px
@@ -52,6 +53,7 @@
         height: 150px
         width: 400px
         transition: border .2s linear
+        margin-bottom: 40px
         &::-moz-placeholder
           color: white
         &::-webkit-input-placeholder
@@ -112,3 +114,15 @@
     &:nth-child(15)
       border-right: 1px solid rgba(255, 255, 255, 0.3)
       border-bottom-right-radius: 20px
+    &_close
+      position: absolute
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 55px
+      height: 55px
+      border-radius: 50%
+      background: rgba(255, 255, 255, 0.1)
+      left: 532px
+      bottom: 9px
+        

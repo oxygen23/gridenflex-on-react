@@ -13,8 +13,10 @@ import shop from './shop.png';
 import corp from './corporate.png';
 import gif from './key.gif';
 import lines from './Frame 13.png';
+import cross from './cross.png';
 
 export { logo };
+export { cross };
 export { vk };
 export { tg };
 export { whatsapp };

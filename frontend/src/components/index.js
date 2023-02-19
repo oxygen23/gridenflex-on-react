@@ -4,6 +4,5 @@ export { default as Feedback } from './Feedback';
 export { default as Header } from './Header';
 export { default as Reviews } from './Reviews';
 export { default as SliderTeam } from './SliderTeam';
-export { default as GetData } from './GetData';
 export { default as SliderServices } from './SliderServices';
-export { default as ModalThree } from './ModalWindowFormReview';
+export { default as ModalThree } from './ModalWindowForm';
