@@ -1,85 +1,41 @@
 import axios from 'axios';
 import { React, useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import {
   Accordeon,
   Button,
   Feedback,
   Header,
+  ModalLanding,
+  ModalCorp,
+  ModalShop,
   ModalThree,
   Reviews,
   SliderServices,
   SliderTeam,
+  BodyReview,
+  ModalReview,
 } from './components';
-import StarRating from './components/StartRating/StarRating';
 import * as images from './img/images';
 
 function App() {
   const [reviews, setReviews] = useState([]);
+  const [isModalLanding, setIsModalLanding] = useState(false);
+  const [isModalCorp, setIsModalCorp] = useState(false);
+  const [isModalShop, setIsModalShop] = useState(false);
   const [isModalReview, setIsModalReview] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { formData },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
 
+  
   useEffect(() => {
     axios.get('http://localhost:3001/api/getReviews').then(({ data }) => {
       setReviews(data);
     });
   }, []);
-  const modalData = {
-    bodyReview: (
-      <div className='modal-window-grid'>
-        <div className='modal-window-grid_title'>Оставить отзыв</div>
-        <form
-          className='modal-window-grid_form'
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <input
-            type='text'
-            placeholder='Ваше имя'
-            {...register('Ваше имя', {})}
-          />
-          <input
-            type='text'
-            placeholder='Организация'
-            {...register('Организация', {})}
-          />
-          <textarea
-            placeholder='Отзыв'
-            {...register('Отзыв', {})} />
-
-          <button className='button' type='submit'>
-            Оствить отзыв
-          </button>
-        </form>
-      </div>
-    ),
-    bodyForm: (
-      <div className='modal-window-grid'>
-        <div className='modal-window-grid_title'>
-          давайте обсудим <span>ваш проект</span>
-        </div>
-        <div className='modal-window-grid_center'>
-          <form action='' className='modal-window-grid_form'>
-            <input type='text' placeholder='Ваше имя' />
-            <input type='email' placeholder='Email' />
-            <input type='text' placeholder='Telegram/VK' />
-            <input type='text' placeholder='Как вы узнали о нас?' />
-          </form>
-          <div className='modal-window-grid_stars'></div>
-          <Button>Отправить</Button>
-        </div>
-      </div>
-    ),
-  };
 
   return (
     <div className='App'>
       <div className='first-section'>
         <Header />
+
         <div className='first-section__wave-lines'>
           <img src={images.lines} alt='' />
         </div>
@@ -98,15 +54,6 @@ function App() {
       </div>
       <div className='second-section'>
         <Accordeon />
-        <ModalThree
-          body={modalData.bodyReview}
-          isVisible={isModalReview}
-          onClose={() => setIsModalReview(false)}
-        />
-        <button
-          className='button'
-          onClick={() => setIsModalReview(true)}
-        ></button>
       </div>
       <div className='fourth-section' id='fourth-section'>
         <div className='fourth-section__grid'></div>
@@ -216,14 +163,30 @@ function App() {
           accusantium aspernatur error ab atque.
         </div>
       </div>
-
+      <ModalLanding
+        isVisible={isModalLanding}
+        onClose={() => setIsModalLanding(false)}
+      />
+      <ModalCorp
+        isVisible={isModalCorp}
+        onClose={() => setIsModalCorp(false)}
+      />
+      <ModalShop
+        isVisible={isModalShop}
+        onClose={() => setIsModalShop(false)}
+      />
       <div className='sixth-section' id='sixth-section'>
         <div className='container'>
           <div className='sixth-section__title'>Услуги</div>
         </div>
+
         <div className='sixth-section__container container'>
           <div className='sixth-section__left-block'>
-            <SliderServices />
+            <SliderServices
+              fnOpenLanding={setIsModalLanding}
+              fnOpenCorp={setIsModalCorp}
+              fnOpenShop={setIsModalShop}
+            />
           </div>
           <div className='sixth-section__right-block'>
             <div className='sixth-section__right-block_title'>
@@ -296,6 +259,11 @@ function App() {
         <div className='seventh-section__grid-item'></div>
         <div className='seventh-section__grid-item'></div>
       </div>
+      <ModalThree
+        onClose={() => setIsModalReview(false)}
+        isVisible={isModalReview}
+        body={<ModalReview />}
+      />
 
       <div className='eighth-section' id='reviews'>
         <div className='eighth-section__container container'>
@@ -306,6 +274,14 @@ function App() {
             ) : (
               <p>Отзывов нет</p>
             )}
+          </div>
+          <div className='eighth-section__button-block'>
+            <button
+              className='button eighth-section__button-block_item'
+              onClick={() => setIsModalReview(true)}
+            >
+              Оставить отзыв
+            </button>
           </div>
         </div>
       </div>

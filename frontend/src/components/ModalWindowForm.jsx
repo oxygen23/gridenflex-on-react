@@ -4,29 +4,32 @@ function ModalWindowFormReview({
   onClose,
   title,
   body,
-  backgroundText,
-}) {
+  backgroundText
+})
+{
   return !isVisible ? null : (
-    <div className='modal-window'>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      {body}
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <div className='modal-window-grid'></div>
-      <button className='modal-window-grid_close' onClick={onClose}>
-        <img src={images.cross} alt="" />
-      </button>
-    </div>
+    <div  className='modal-window__fix'>
+      <div className='modal-window'>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        {body}
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <div className='modal-window-grid'></div>
+        <button className='modal-window-grid_close' onClick={onClose}>
+          <img src={images.cross} alt="" />
+        </button>
+      </div>
+    </div >
   );
 }
 

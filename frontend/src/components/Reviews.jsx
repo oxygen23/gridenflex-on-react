@@ -1,5 +1,6 @@
 import ball from '../img/ball-review.png';
-
+import { axios } from "axios";
+import Star from './StarRating/Star';
 function Reviews({
   id,
   author,
@@ -21,7 +22,13 @@ function Reviews({
             <div className='eighth-section__slider-item_company'>{company}</div>
           </div>
         </div>
-        <div className='eighth-section__slider-item_stars'></div>
+        <div className='eighth-section__slider-item_stars'>{/* 
+          {[...Array(rating)].map((star, index) => {
+            const value = index + 1;
+
+            return <Star key={index} value={value} />;
+          })} */}
+        </div>
       </div>
       <div className='eighth-section__slider-item_description'>
         {description}

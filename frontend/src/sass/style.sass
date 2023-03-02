@@ -212,6 +212,7 @@ body
   &__slider
     display: flex
     justify-content: space-between
+    margin-bottom: 30px
     &-item
       position: relative
       overflow: hidden
@@ -226,9 +227,8 @@ body
         align-items: center
         margin-bottom: 30px
         &-left
-          width: 145px
+          width: 220px
           display: flex
-          justify-content: space-between
           align-items: center
       &_flexbox
         display: flex
@@ -240,12 +240,15 @@ body
       &_avatar
         width: 40px
         height: 40px
+        margin-right: 10px
         & img
           width: 100%
           height: 100%
           object-fit: cover
           border-radius: 50%
       &_name
+        font-size: 22px
+        font-family: InterM
         color: $fiolColor
       &_company
         font-family: 'InterL'
@@ -256,7 +259,7 @@ body
         background-color: $fiolColor
         opacity: .5
       &_description
-        font-size: 16px
+        font-size: 18px
       &_decoration
         position: absolute
         &:nth-child(1)
@@ -268,6 +271,16 @@ body
         &:nth-child(3)
           bottom: -45px
           left: 55px
+  &__button-block
+    display: flex
+    justify-content: end
+    &_item
+      color: $fiolColor
+      border-color: $fiolColor
+      transition: all .3s linear
+      &:hover
+        background: rgba(151, 71, 255, .7)
+        color: white
 .footer
   height: 140px
   color: white

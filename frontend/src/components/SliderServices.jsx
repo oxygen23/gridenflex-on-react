@@ -1,8 +1,8 @@
-import * as images from '../img/images';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/bundle';
-function SliderServices() {
+import { Swiper, SwiperSlide } from 'swiper/react';
+import * as images from '../img/images';
+function SliderServices({ fnOpenLanding, fnOpenCorp, fnOpenShop }) {
   return (
     <Swiper
       spaceBetween={0}
@@ -22,7 +22,12 @@ function SliderServices() {
           <div className='sixth-section__slider-item_price'>
             от <span>50 000</span> руб
           </div>
-          <button className='sixth-section__slider-item_link'>
+          <button
+            className='sixth-section__slider-item_link'
+            onClick={() => {
+              fnOpenLanding(true);
+            }}
+          >
             Читать подробнее
           </button>
           <button className='sixth-section__slider-item_button button'>
@@ -42,7 +47,10 @@ function SliderServices() {
           <div className='sixth-section__slider-item_price'>
             от <span>80 000</span> руб
           </div>
-          <button className='sixth-section__slider-item_link'>
+          <button
+            className='sixth-section__slider-item_link'
+            onClick={() => fnOpenCorp(true)}
+          >
             Читать подробнее
           </button>
           <button className='sixth-section__slider-item_button button'>
@@ -62,7 +70,10 @@ function SliderServices() {
           <div className='sixth-section__slider-item_price'>
             от <span>150 000</span> руб
           </div>
-          <button className='sixth-section__slider-item_link'>
+          <button
+            className='sixth-section__slider-item_link'
+            onClick={() => fnOpenShop(true)}
+          >
             Читать подробнее
           </button>
           <button className='sixth-section__slider-item_button button'>
@@ -71,9 +82,6 @@ function SliderServices() {
         </div>
       </SwiperSlide>
     </Swiper>
-
-    // <div className='sixth-section__slider'>
-    // </div>
   );
 }
 

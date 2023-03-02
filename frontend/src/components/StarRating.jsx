@@ -1,7 +1,7 @@
-import React, {useState, createContext} from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import React, { createContext, useState } from 'react';
 
-import StarsList from "./components/StarsList";
+import StarsList from './/StarRating/StarsList';
 
 export const StarRatingContext = createContext();
 
@@ -25,14 +25,14 @@ export default function StarRating({
 
     setRating(value);
     onChangeValue(value);
-  }
+  };
 
   const setHoverFn = (value) => {
     if (readOnly) return;
 
     setHover(value);
     onChangeHover(value);
-  }
+  };
 
   return (
     <>

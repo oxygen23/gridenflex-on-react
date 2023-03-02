@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
-
-import { StarRatingContext } from '../StarRating';
+import React, { useContext } from 'react';
+import { BodyReviewContext } from '../Modals/MoadlReview';
 
 function Star({ value }) {
   const {
@@ -12,11 +11,11 @@ function Star({ value }) {
     setHover,
     setRating,
     width,
-  } = useContext(StarRatingContext);
+  } = useContext(BodyReviewContext);
 
   return (
     <div
-      className="star"
+      className='star'
       onClick={() => setRating(value)}
       onMouseEnter={() => setHover(value)}
       onMouseLeave={() => setHover(null)}
@@ -25,12 +24,12 @@ function Star({ value }) {
         data-rating={value}
         fill={value <= (hover || rating) ? fillColor : emptyColor}
         height={height}
-        viewBox="0 0 25 25"
-        width={width}
+        viewBox='0 0 25 25'
+        width={27.9}
       >
         <polygon
-          strokeWidth="0"
-          points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+          strokeWidth='0'
+          points='9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78'
         />
       </svg>
     </div>

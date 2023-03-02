@@ -6,7 +6,7 @@ function SliderTeam() {
       <div className='seventh-section__grid-item_slider-item'>
         <img src={img} alt='' />
         <div className='seventh-section__grid-item_slider-item_post'>
-          <p>Должность</p>
+          <p>Дизайнер</p>
         </div>
         <div className='seventh-section__grid-item_slider-item_name'>Окси</div>
         <div className='seventh-section__grid-item_slider-item_slogan'>
@@ -16,7 +16,7 @@ function SliderTeam() {
       <div className='seventh-section__grid-item_slider-item'>
         <img src={img} alt='' />
         <div className='seventh-section__grid-item_slider-item_post'>
-          <p>Должность</p>
+          <p>Разработчик</p>
         </div>
         <div className='seventh-section__grid-item_slider-item_name'>Окси</div>
         <div className='seventh-section__grid-item_slider-item_slogan'>
@@ -26,7 +26,7 @@ function SliderTeam() {
       <div className='seventh-section__grid-item_slider-item'>
         <img src={img} alt='' />
         <div className='seventh-section__grid-item_slider-item_post'>
-          <p>Должность</p>
+          <p>Разработчик</p>
         </div>
         <div className='seventh-section__grid-item_slider-item_name'>Окси</div>
         <div className='seventh-section__grid-item_slider-item_slogan'>
@@ -36,7 +36,7 @@ function SliderTeam() {
       <div className='seventh-section__grid-item_slider-item'>
         <img src={img} alt='' />
         <div className='seventh-section__grid-item_slider-item_post'>
-          <p>Должность</p>
+          <p>Разработчик</p>
         </div>
         <div className='seventh-section__grid-item_slider-item_name'>Окси</div>
         <div className='seventh-section__grid-item_slider-item_slogan'>
