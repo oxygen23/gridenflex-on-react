@@ -1,7 +1,7 @@
 import logo from '../img/GridenFLEX.png';
 import Button from './Button';
 
-function Header() {
+function Header({isVisble, onClose}) {
   return (
     <div className='header fixed'>
       <div className='header__container'>
@@ -24,9 +24,9 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <Button>
+          <a href='#feedback' className='button'>
             <span>Написать нам</span>
-          </Button>
+          </a>
         </div>
       </div>
     </div>

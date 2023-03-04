@@ -18,8 +18,6 @@ export default function ModalReview({
   const [rating, setRating] = useState(defaultState);
   const [hover, setHover] = useState(null);
 
-  
-
   const [data, setData] = useState({
     author: '',
     image_url: '',

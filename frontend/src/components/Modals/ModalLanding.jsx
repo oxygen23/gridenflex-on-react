@@ -3,6 +3,7 @@ import { ModalThree } from '..';
 import * as images from '../../img/images';
 import ModalFeedback from './ModaFeedback';
 function ModalLanding({ isVisible = true, onClose, backgroundText }) {
+  
   const [isFeedback, setIsFeedback] = useState(false);
 
   return !isVisible ? null : (

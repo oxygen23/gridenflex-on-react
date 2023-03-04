@@ -9,9 +9,19 @@ function Reviews({
   company,
   rating,
   date,
-}) {
+  length
+})
+{
+  const maxValue = 5 
+  console.log(rating);
   return (
-    <div className='eighth-section__slider-item'>
+    <div
+      className= {
+        length < 3
+          ? 'eighth-section__slider-item two-slide-item'
+          : 'eighth-section__slider-item'
+      }
+    >
       <div className='eighth-section__slider-item_up-block'>
         <div className='eighth-section__slider-item_up-block-left'>
           <div className='eighth-section__slider-item_avatar'>
@@ -22,12 +32,10 @@ function Reviews({
             <div className='eighth-section__slider-item_company'>{company}</div>
           </div>
         </div>
-        <div className='eighth-section__slider-item_stars'>{/* 
-          {[...Array(rating)].map((star, index) => {
-            const value = index + 1;
-
-            return <Star key={index} value={value} />;
-          })} */}
+        <div className='eighth-section__slider-item_stars'>
+          {[...Array(maxValue - rating)].map((star, index) => {
+          return console.log(index);
+        })}
         </div>
       </div>
       <div className='eighth-section__slider-item_description'>

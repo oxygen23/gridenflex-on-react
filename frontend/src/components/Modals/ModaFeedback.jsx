@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import Button from '../Button';
 
@@ -18,6 +19,13 @@ function ModalFeedback() {
   const submit = (e) => {
     e.preventDefault();
   };
+
+  const sendData = () => {
+    axios.post('', data).then(function (response) {
+      console.log(response);
+    });
+  };
+  
   return (
     <div className='modal-window-grid'>
       <div className='modal-window-grid_title'>

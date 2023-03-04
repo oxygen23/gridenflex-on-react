@@ -210,17 +210,22 @@ body
     font-size: 48px
     margin-bottom: 50px
   &__slider
+    width: 100%
     display: flex
     justify-content: space-between
     margin-bottom: 30px
+    &.two-slide
+      justify-content: unset
     &-item
       position: relative
       overflow: hidden
       width: 435px
       height: 317px
-      border: 4px solid $fiolColor
+      border: 2px solid $fiolColor
       border-radius: 20px
       padding: 38px 25px
+      &.two-slide-item
+        margin-right: 50px
       &_up-block
         display: flex
         justify-content: space-between
@@ -274,6 +279,8 @@ body
   &__button-block
     display: flex
     justify-content: end
+    &.two-slide-item
+      justify-content: start
     &_item
       color: $fiolColor
       border-color: $fiolColor

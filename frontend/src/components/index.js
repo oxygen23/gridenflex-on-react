@@ -6,7 +6,6 @@ export { default as Reviews } from './Reviews';
 export { default as SliderTeam } from './SliderTeam';
 export { default as SliderServices } from './SliderServices';
 export { default as ModalThree } from './ModalWindowForm';
-export { default as StarRating } from './StarRating';
 export { default as ModalReview } from './Modals/MoadlReview';
 export { default as BodyForm } from './Modals/ModaFeedback';
 export { default as ModalLanding } from './Modals/ModalLanding';

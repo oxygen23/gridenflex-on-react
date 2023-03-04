@@ -15,6 +15,7 @@ import {
   BodyReview,
   ModalReview,
 } from './components';
+import ModalFeedback from './components/Modals/ModaFeedback';
 import * as images from './img/images';
 
 function App() {
@@ -23,14 +24,14 @@ function App() {
   const [isModalCorp, setIsModalCorp] = useState(false);
   const [isModalShop, setIsModalShop] = useState(false);
   const [isModalReview, setIsModalReview] = useState(false);
+  const [isFeedback, setIsFeedback] = useState(false);
 
-  
   useEffect(() => {
     axios.get('http://localhost:3001/api/getReviews').then(({ data }) => {
       setReviews(data);
     });
   }, []);
-
+  const reviewsLen = reviews.length;
   return (
     <div className='App'>
       <div className='first-section'>
@@ -45,7 +46,9 @@ function App() {
               Создаем сайты <br /> под ключ <br />
               <span className='keyword_fiol'>за 2 недели</span>
             </div>
-            <Button>Написать нам</Button>
+            <a href='#feedback' className='button'>
+              Написать нам
+            </a>
           </div>
           <div className='first-section__right-block'>
             <img src={images.gif} alt='' />
@@ -181,11 +184,17 @@ function App() {
         </div>
 
         <div className='sixth-section__container container'>
+          <ModalThree
+            isVisible={isFeedback}
+            onClose={() => setIsFeedback(!isFeedback)}
+            body={<ModalFeedback />}
+          />
           <div className='sixth-section__left-block'>
             <SliderServices
               fnOpenLanding={setIsModalLanding}
               fnOpenCorp={setIsModalCorp}
               fnOpenShop={setIsModalShop}
+              fnOpenFeedback={setIsFeedback}
             />
           </div>
           <div className='sixth-section__right-block'>
@@ -268,16 +277,28 @@ function App() {
       <div className='eighth-section' id='reviews'>
         <div className='eighth-section__container container'>
           <div className='eighth-section__title'>Отзывы</div>
-          <div className='eighth-section__slider'>
+          <div
+            className={
+              reviewsLen < 3
+                ? 'eighth-section__slider two-slide'
+                : 'eighth-section__slider'
+            }
+          >
             {reviews != null ? (
-              reviews.map((obj) => <Reviews {...obj} key={obj.id} />)
+              reviews.map((obj) => <Reviews length={reviewsLen} {...obj} key={obj.id} />)
             ) : (
               <p>Отзывов нет</p>
             )}
           </div>
-          <div className='eighth-section__button-block'>
+          <div
+            className= {
+              reviewsLen < 3
+                ? 'eighth-section__button-block two-slide-item'
+                : 'eighth-section__button-block'
+            }
+          >
             <button
-              className='button eighth-section__button-block_item'
+              className='button eighth-section__button-block_item '
               onClick={() => setIsModalReview(true)}
             >
               Оставить отзыв
@@ -286,7 +307,7 @@ function App() {
         </div>
       </div>
 
-      <div className='feedback'>
+      <div className='feedback' id='feedback'>
         <div className='feedback__grid'>
           <div className='feedback__grid-child'>
             <div className='feedback__grid-title'>
