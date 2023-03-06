@@ -70,9 +70,9 @@ class ApiPostController {
 
     async sendContacts(request, response) {
         if (
-            !tools.checkJsonKey(request.body, 'name') ||
+            !tools.checkJsonKey(request.body, 'author') ||
             !tools.checkJsonKey(request.body, 'email') ||
-            !tools.checkJsonKey(request.body, 'contacts')) {
+            !tools.checkJsonKey(request.body, 'society')) {
 
             return response.status(400).json({'error': 'Некорректные данные.', 'code': 5})
         }
@@ -83,9 +83,9 @@ class ApiPostController {
             description = tools.delInjection(request.body.description);
         }
 
-        let name = tools.delInjection(request.body.name)
+        let name = tools.delInjection(request.body.author)
         let email = tools.delInjection(request.body.email)
-        let contacts = tools.delInjection(request.body.contacts)
+        let contacts = tools.delInjection(request.body.society)
 
         let message = `Новый заказ%0A%0AИмя отправителя: ${name}%0AПочта отправителя: ${email}%0AКонтакты отправителя: ${contacts}%0A%0AКак узнали о нас: ${description}`
 
