@@ -1,4 +1,4 @@
-import img from '../img/photo-team.png';
+import * as images from '../img/images'
 import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
@@ -16,12 +16,14 @@ function SliderTeam() {
     >
       <SwiperSlide>
         <div className='seventh-section__grid-item_slider-item'>
-          <img src={img} alt='' />
+          <div className='seventh-section__grid-item_slider-item_img-block'>
+            <img src='' alt='' />
+          </div>
           <div className='seventh-section__grid-item_slider-item_post'>
             <p>Дизайнер</p>
           </div>
           <div className='seventh-section__grid-item_slider-item_name'>
-            Окси
+            Андрей
           </div>
           <div className='seventh-section__grid-item_slider-item_slogan'>
             "Если я состою в гриденфлексе, <br /> не значит что ..."
@@ -30,12 +32,14 @@ function SliderTeam() {
       </SwiperSlide>
       <SwiperSlide>
         <div className='seventh-section__grid-item_slider-item'>
-          <img src={img} alt='' />
+          <div className='seventh-section__grid-item_slider-item_img-block'>
+            <img src={images.markTeam} alt='' />
+          </div>
           <div className='seventh-section__grid-item_slider-item_post'>
             <p>Разработчик</p>
           </div>
           <div className='seventh-section__grid-item_slider-item_name'>
-            Окси
+            Марк
           </div>
           <div className='seventh-section__grid-item_slider-item_slogan'>
             "Если я состою в гриденфлексе, <br /> не значит что ..."
@@ -44,12 +48,31 @@ function SliderTeam() {
       </SwiperSlide>
       <SwiperSlide>
         <div className='seventh-section__grid-item_slider-item'>
-          <img src={img} alt='' />
+          <div className='seventh-section__grid-item_slider-item_img-block'>
+            <img src='' alt='' />
+          </div>
           <div className='seventh-section__grid-item_slider-item_post'>
             <p>Разработчик</p>
           </div>
           <div className='seventh-section__grid-item_slider-item_name'>
-            Окси
+            Михаил
+          </div>
+          <div className='seventh-section__grid-item_slider-item_slogan'>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel,
+            corporis.
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div className='seventh-section__grid-item_slider-item'>
+          <div className='seventh-section__grid-item_slider-item_img-block'>
+            <img src={images.denisTeam} alt='' />
+          </div>
+          <div className='seventh-section__grid-item_slider-item_post'>
+            <p>Разработчик</p>
+          </div>
+          <div className='seventh-section__grid-item_slider-item_name'>
+            Денис
           </div>
           <div className='seventh-section__grid-item_slider-item_slogan'>
             "Если я состою в гриденфлексе, <br /> не значит что ..."
@@ -58,26 +81,14 @@ function SliderTeam() {
       </SwiperSlide>
       <SwiperSlide>
         <div className='seventh-section__grid-item_slider-item'>
-          <img src={img} alt='' />
+          <div className='seventh-section__grid-item_slider-item_img-block'>
+            <img src={images.igorTeam} alt='' />
+          </div>
           <div className='seventh-section__grid-item_slider-item_post'>
             <p>Разработчик</p>
           </div>
           <div className='seventh-section__grid-item_slider-item_name'>
-            Окси
-          </div>
-          <div className='seventh-section__grid-item_slider-item_slogan'>
-            "Если я состою в гриденфлексе, <br /> не значит что ..."
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className='seventh-section__grid-item_slider-item'>
-          <img src={img} alt='' />
-          <div className='seventh-section__grid-item_slider-item_post'>
-            <p>Разработчик</p>
-          </div>
-          <div className='seventh-section__grid-item_slider-item_name'>
-            Окси
+            Игорь
           </div>
           <div className='seventh-section__grid-item_slider-item_slogan'>
             "Если я состою в гриденфлексе, <br /> не значит что ..."

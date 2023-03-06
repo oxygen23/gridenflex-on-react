@@ -18,6 +18,12 @@ function ModalFeedback() {
   };
   const submit = (e) => {
     e.preventDefault();
+    setData({
+      author: '',
+      email: '',
+      society: '',
+      description: ''
+    })
   };
 
   const sendData = () => {
@@ -61,7 +67,7 @@ function ModalFeedback() {
             placeholder='Как вы узнали о нас?'
             onChange={update}
           />
-          <Button>Отправить</Button>
+          <button className='button'>Отправить</button>
         </form>
       </div>
     </div>

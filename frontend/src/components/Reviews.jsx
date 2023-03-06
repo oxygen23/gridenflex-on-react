@@ -1,6 +1,5 @@
 import ball from '../img/ball-review.png';
-import { axios } from "axios";
-import Star from './StarRating/Star';
+import * as images from '../img/images';
 function Reviews({
   id,
   author,
@@ -9,14 +8,12 @@ function Reviews({
   company,
   rating,
   date,
-  length
-})
-{
-  const maxValue = 5 
-  console.log(rating);
+  length,
+}) {
+  const maxValue = 5;
   return (
     <div
-      className= {
+      className={
         length < 3
           ? 'eighth-section__slider-item two-slide-item'
           : 'eighth-section__slider-item'
@@ -33,9 +30,26 @@ function Reviews({
           </div>
         </div>
         <div className='eighth-section__slider-item_stars'>
+          {[...Array(rating)].map((star, index) => {
+            return (
+              <div
+                key={index}
+                className='eighth-section__slider-item_stars-item'
+              >
+                <img src={images.starYelow} alt='' />
+              </div>
+            );
+          })}
           {[...Array(maxValue - rating)].map((star, index) => {
-          return console.log(index);
-        })}
+            return (
+              <div
+                key={index}
+                className='eighth-section__slider-item_stars-item'
+              >
+                <img src={images.starGray} alt='' />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className='eighth-section__slider-item_description'>

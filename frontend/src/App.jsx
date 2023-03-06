@@ -1,22 +1,29 @@
-import axios from 'axios';
 import { React, useEffect, useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import axios from 'axios';
+import 'swiper/css';
+import 'swiper/css/bundle';
+import 'swiper/css/navigation';
+
 import {
   Accordeon,
-  Button,
   Feedback,
   Header,
-  ModalLanding,
   ModalCorp,
+  ModalLanding,
+  ModalReview,
   ModalShop,
   ModalThree,
   Reviews,
   SliderServices,
   SliderTeam,
-  BodyReview,
-  ModalReview,
 } from './components';
 import ModalFeedback from './components/Modals/ModaFeedback';
 import * as images from './img/images';
+
+SwiperCore.use([Navigation, Pagination]);
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -145,25 +152,62 @@ function App() {
         <div className='fifth-section__grid'></div>
         <div className='fifth-section__grid'>1</div>
         <div className='fifth-section__grid'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. A porro iure
-          doloremque enim facilis ea.
+          <div className='fifth-section__grid_wrapper'>
+            <div className='fifth-section__grid-img_block'>
+              <img src={images.figmaPic} alt='' />
+              <img src={images.AIPic} alt='' />
+              <img src={images.PSPic} alt='' />
+            </div>
+            Первый этап начинается с постройки прототипа дизайна сайта,
+            используются такие программы как: Figma, Adobe illustrator и Adobe
+            Photoshop
+          </div>
         </div>
         <div className='fifth-section__grid'>2</div>
         <div className='fifth-section__grid'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          repellat vitae atque laboriosam quis laborum!
+          <div className='fifth-section__grid_wrapper big'>
+            <div className='fifth-section__grid-img_block'>
+              <img src={images.JSPic} alt='' />
+              <img src={images.HtmlPic} alt='' />
+              <img src={images.CssPic} alt='' />
+              <img src={images.PhpPic} alt='' />
+              <img src={images.ReactPic} alt='' />
+            </div>
+            На <span>втором</span> этапе начинается первичная верстка/разработка
+            веб-сервиса. То есть, его полноценная отрисовка из макета в браузер,
+            посредством таких технологий как: <span>Html/Sass/JavaScript</span>.
+            В зависимости от проекта выполняется перенос верстки на популярную
+            технологию <span>ReactJS</span>, для
+            <span> улучшения</span> производительности.
+          </div>
         </div>
         <div className='fifth-section__grid'></div>
         <div className='fifth-section__grid'></div>
         <div className='fifth-section__grid'>3</div>
         <div className='fifth-section__grid'>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid
-          autem repellendus dolores sunt sapiente illo.
+          <div className='fifth-section__grid_wrapper'>
+            <div className='fifth-section__grid-img_block'>
+              <img src={images.figmaPic} alt='' />
+              <img src={images.AIPic} alt='' />
+              <img src={images.PSPic} alt='' />
+            </div>
+            Первый этап начинается с постройки прототипа дизайна сайта,
+            используются такие программы как: Figma, Adobe illustrator и Adobe
+            Photoshop
+          </div>
         </div>
         <div className='fifth-section__grid'>4</div>
         <div className='fifth-section__grid'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor magni
-          accusantium aspernatur error ab atque.
+          <div className='fifth-section__grid_wrapper big'>
+            <div className='fifth-section__grid-img_block'>
+              <img src={images.figmaPic} alt='' />
+              <img src={images.AIPic} alt='' />
+              <img src={images.PSPic} alt='' />
+            </div>
+            Первый этап начинается с постройки прототипа дизайна сайта,
+            используются такие программы как: Figma, Adobe illustrator и Adobe
+            Photoshop
+          </div>
         </div>
       </div>
       <ModalLanding
@@ -277,21 +321,38 @@ function App() {
       <div className='eighth-section' id='reviews'>
         <div className='eighth-section__container container'>
           <div className='eighth-section__title'>Отзывы</div>
+          {reviewsLen < 3 ? (
+            <div className='eighth-section__slider two-slide'>
+              {reviewsLen !== 0 ? (
+                reviews.map((obj) => (
+                  <Reviews length={reviewsLen} {...obj} key={obj.id} />
+                ))
+              ) : (
+                <p>Отзывов нет</p>
+              )}
+            </div>
+          ) : (
+            <Swiper
+              className='eighth-section__slider'
+              navigation
+              pagination={{ clickable: true }}
+              slidesPerView={3}
+              spaceBetween={20}
+            >
+              {reviews != null ? (
+                reviews.map((obj) => (
+                  <SwiperSlide key={obj.id}>
+                    {' '}
+                    <Reviews length={reviewsLen} {...obj} />
+                  </SwiperSlide>
+                ))
+              ) : (
+                <p>Отзывов нет</p>
+              )}
+            </Swiper>
+          )}
           <div
             className={
-              reviewsLen < 3
-                ? 'eighth-section__slider two-slide'
-                : 'eighth-section__slider'
-            }
-          >
-            {reviews != null ? (
-              reviews.map((obj) => <Reviews length={reviewsLen} {...obj} key={obj.id} />)
-            ) : (
-              <p>Отзывов нет</p>
-            )}
-          </div>
-          <div
-            className= {
               reviewsLen < 3
                 ? 'eighth-section__button-block two-slide-item'
                 : 'eighth-section__button-block'
@@ -327,7 +388,9 @@ function App() {
         <div className='feedback__grid'>
           <Feedback />
         </div>
-        <div className='feedback__grid'></div>
+        <div className='feedback__grid'>
+          <img src={images.gif} alt='' />
+        </div>
         <div className='feedback__grid'></div>
         <div className='feedback__grid'></div>
         <div className='feedback__grid'></div>

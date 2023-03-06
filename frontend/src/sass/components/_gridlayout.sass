@@ -13,6 +13,8 @@
     border: 1px solid #1e1e1e
     width: 100%
     height: 100%
+    & p 
+      font-size: 32px
     & img
       border: 1px solid white
       border-radius: 10px
@@ -23,8 +25,8 @@
     &:nth-child(1), &:nth-child(9), &:nth-child(17), &:nth-child(25), &:nth-child(33), &:nth-child(41)
       border-left: none
     &:nth-child(3)
-      padding-top: 173px
-      padding-bottom: 56px
+      padding-top: 100px
+      padding-bottom: 100px
       font-size: 48px
       grid-area: title
     &:nth-child(5)
@@ -85,17 +87,31 @@
   background: #EDEDED
   width: calc( 100% - 61px )
   display: grid
-  grid-template-columns: 1fr .56fr .8fr 1fr 1.5fr .7fr
-  grid-template-rows: 1fr 1.5fr 2fr
+  grid-template-columns: 440px 170px 220px 370px 440px 190px
+  grid-template-rows: 200px 300px 383px
   grid-template-areas: '. . . . . .' '. num1 desc1 num2 desc2 .' '. num3 desc3 num4 desc4 .'
   position: relative
   &__grid
+    
     border: 1px solid rgba(0, 0, 0, 0.04)
     font-family: 'InterR'
     display: flex
     justify-content: center
-    font-size: 24px
-    // overflow: hidden
+    font-size: 16px
+    &_wrapper
+      width: 202px
+      & span
+        color: $fiolColor
+        font-family: InterB
+      &.big
+        width: 367px
+    &-img_block
+      display: flex
+      justify-content: space-evenly
+      align-items: center
+      margin-bottom: 18px
+      & img
+        object-fit: contain
     &-child
       position: absolute
       top: 65px
@@ -109,6 +125,7 @@
       font-size: 300px
       color: $greenColor
     &:nth-child(9)
+      padding: 20px 12px
       grid-area: desc1
     &:nth-child(10)
       grid-area: num2
@@ -118,6 +135,7 @@
       color: $fiolColor
     &:nth-child(11)
       grid-area: desc2
+      padding: 20px 13px
     &:nth-child(14)
       grid-area: num3
       font-family: 'Intro'
@@ -126,6 +144,7 @@
       color: $fiolColor
     &:nth-child(15)
       grid-area: desc3
+      padding: 20px 13px
     &:nth-child(16)
       grid-area: num4
       font-size: 300px
@@ -134,6 +153,7 @@
       color: $fiolColor
     &:nth-child(17)
       grid-area: desc4
+      padding: 20px 13px
     &:nth-child(-n + 6)
       border-top: none
 
@@ -162,6 +182,7 @@
       border-right: none
 
     &:nth-child(2)
+      position: relative
       grid-area: slider
       width: 1613px
       border-top: none
@@ -192,7 +213,7 @@
     &_slider
       display: flex
       justify-content: space-between
-      padding: 33px 16px 101px 16px
+      padding: 33px 16px 0px 16px
       width: 100%
       &-item
         display: flex
@@ -207,11 +228,18 @@
         border: 1px solid white
         border-radius: 15px
         overflow: hidden
-        & img
+        background: rgba(255, 255, 255, 0.1)
+        &_img-block
+          overflow: hidden
+          width: 360px
+          height: 360px
+          border-radius: 50%
+          background: rgb(172, 172, 172)
           position: absolute
-          top: 0
-          right: 0
+          top: -38px
+          left: 57px
           z-index: -1
+          
         &_post
           display: flex
           align-items: center
@@ -266,6 +294,13 @@
       align-items: center
     &:nth-child(9)
       grid-area: gif
+      display: flex
+      align-items: center
+      justify-content: center
+      & img
+        width: 70%
+        height: 70%
+        object-fit: contain
     &-form
       display: flex
       flex-direction: column

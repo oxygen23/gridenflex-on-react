@@ -16,6 +16,11 @@ function Feedback() {
   };
   const submit = (e) => {
     e.preventDefault();
+    setData({
+      author: '',
+      email: '',
+      society: ''
+    })
   };
 
   const sendData = () => {

@@ -23,7 +23,7 @@ export default function ModalReview({
     image_url: '',
     company: '',
     description: '',
-    key: null,
+    key: '',
     rating: defaultState,
   });
   const setRatingFn = (value) => {
@@ -43,15 +43,16 @@ export default function ModalReview({
   };
 
   const submit = (e) => {
+    e.preventDefault();
+    setRating(0)
     setData({
       author: '',
       image_url: '',
       company: '',
       description: '',
-      key: null,
-      rating: defaultState,
+      key: '',
+      rating: rating,
     });
-    e.preventDefault();
   };
 
   const update = (e) => {
@@ -92,14 +93,14 @@ export default function ModalReview({
             type='text'
             name='author'
             placeholder='Ваше имя'
-            value={data.name}
+            value={data.author}
             onChange={update}
           />
           <input
             type='text'
             name='company'
             placeholder='Организация'
-            value={data.corp}
+            value={data.company}
             onChange={update}
           />
           <input
@@ -112,7 +113,7 @@ export default function ModalReview({
           <textarea
             name='description'
             placeholder='Отзыв'
-            value={data.review}
+            value={data.description}
             onChange={update}
           />
 

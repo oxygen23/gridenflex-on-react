@@ -1,12 +1,15 @@
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
 import * as images from '../img/images';
 function SliderServices({ fnOpenLanding, fnOpenCorp, fnOpenShop, fnOpenFeedback }) {
   return (
     <Swiper
       spaceBetween={0}
       slidesPerView={1.51}
+      pagination={{ clickable: true }}
+      className='sixth-section__slider'
     >
       <SwiperSlide>
         <div className='sixth-section__slider-item'>
@@ -28,7 +31,10 @@ function SliderServices({ fnOpenLanding, fnOpenCorp, fnOpenShop, fnOpenFeedback 
           >
             Читать подробнее
           </button>
-          <button className='sixth-section__slider-item_button button' onClick={() => fnOpenFeedback(true)}>
+          <button
+            className='sixth-section__slider-item_button button'
+            onClick={() => fnOpenFeedback(true)}
+          >
             Заказать
           </button>
         </div>
@@ -51,7 +57,10 @@ function SliderServices({ fnOpenLanding, fnOpenCorp, fnOpenShop, fnOpenFeedback 
           >
             Читать подробнее
           </button>
-          <button className='sixth-section__slider-item_button button' onClick={() => fnOpenFeedback(true)}>
+          <button
+            className='sixth-section__slider-item_button button'
+            onClick={() => fnOpenFeedback(true)}
+          >
             Заказать
           </button>
         </div>
@@ -74,7 +83,10 @@ function SliderServices({ fnOpenLanding, fnOpenCorp, fnOpenShop, fnOpenFeedback 
           >
             Читать подробнее
           </button>
-          <button className='sixth-section__slider-item_button button' onClick={() => fnOpenFeedback(true)}>
+          <button
+            className='sixth-section__slider-item_button button'
+            onClick={() => fnOpenFeedback(true)}
+          >
             Заказать
           </button>
         </div>

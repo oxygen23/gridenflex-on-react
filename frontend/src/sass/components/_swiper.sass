@@ -1,2 +1,107 @@
 .swiper-horizontal>.swiper-pagination-bullets
-  bottom: 40px
+  bottom: 26px
+.eighth-section__slider>.swiper-pagination-bullets
+  bottom: 10px
+.sixth-section__slider>.swiper-pagination-bullets
+  bottom: -61px
+
+.swiper
+  position: unset
+
+.swiper-button
+  &-prev
+    left: -60px
+    &::after
+      content: ''
+      width: 20px
+      height: 20px
+      border-right: 4px solid $fiolColor
+      border-bottom: 4px solid $fiolColor
+      transform: rotate(135deg)
+      border-top-right-radius: 3px
+      border-bottom-left-radius: 3px
+  &-next
+    right: -38px
+    &::after
+      content: ''
+      width: 20px
+      height: 20px
+      border-right: 4px solid $fiolColor
+      border-bottom: 4px solid $fiolColor
+      transform: rotate(-45deg)
+      border-top-right-radius: 3px
+      border-bottom-left-radius: 3px
+
+.seventh-section__grid-item_slider>.swiper-pagination>.swiper-pagination-bullet
+  background: white
+  width: 20px
+  height: 20px
+  opacity: 1
+  border-radius: 20px
+  transition: width .3s ease-in-out
+  &:not(:last-child)
+    margin-right: 20px
+  &.swiper-pagination-bullet-active
+    width: 70px
+    border-radius: 16px
+    transition: width .3s ease-in-out
+
+.eighth-section__slider>.swiper-pagination>.swiper-pagination-bullet
+  background: $fiolColor
+  width: 20px
+  height: 20px
+  opacity: 1
+  border-radius: 20px
+  transition: width .3s ease-in-out
+  &:not(:last-child)
+    margin-right: 19px
+  &.swiper-pagination-bullet-active
+    width: 70px
+    border-radius: 16px
+    transition: width .3s ease-in-out
+
+.sixth-section__slider>.swiper-pagination>.swiper-pagination-bullet
+  background: $fiolColor
+  width: 20px
+  height: 20px
+  opacity: 1
+  border-radius: 20px
+  transition: width .3s ease-in-out
+  &:not(:last-child)
+    margin-right: 15px
+  &.swiper-pagination-bullet-active
+    width: 70px
+    border-radius: 16px
+    transition: width .3s ease-in-out
+
+.seventh-section__grid-item_slider>.swiper-wrapper>.swiper-slide
+  &:nth-child(1)
+    .seventh-section__grid-item_slider-item
+      &_img-block
+        & img
+
+  &:nth-child(2)
+    .seventh-section__grid-item_slider-item
+      &_img-block
+        & img
+          transform: translate(-16px, -49px)
+          width: 100%
+
+  &:nth-child(3)
+    .seventh-section__grid-item_slider-item
+      &_img-block
+        & img
+
+  &:nth-child(4)
+    .seventh-section__grid-item_slider-item
+      &_img-block
+        & img
+          transform: translate(0px, -55px)
+          width: 90%
+
+  &:nth-child(5)
+    .seventh-section__grid-item_slider-item
+      &_img-block
+        & img
+          transform: translate(-20px,-100px)
+          width: 100%
