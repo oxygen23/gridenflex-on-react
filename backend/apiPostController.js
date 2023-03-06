@@ -6,7 +6,7 @@ class ApiPostController {
     async getReviews(request, response) {
         database.query('SELECT * FROM `reviews`', (error, rows, fields) => {
             if (error) {
-                return response.status(500).json({'error': 'Ошибка на сервере', 'code': 1})
+                return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 1})
             }
     
             response.json(rows)
@@ -22,7 +22,7 @@ class ApiPostController {
             !tools.checkJsonKey(request.body, 'rating') ||
             !tools.checkJsonKey(request.body, 'key')) {
 
-            return response.status(400).json({'error': 'Некорректные данные.', 'code': 2})
+            return response.status(400).json({'error': 'Некорректные данные.', 'bcode': 2})
         }
 
         let author = tools.delInjection(request.body.author)
@@ -32,9 +32,18 @@ class ApiPostController {
         let rating = tools.delInjection(request.body.rating)
         let key = tools.delInjection(request.body.key)
 
+        if (author.length == 0 ||
+            image_url.length == 0 ||
+            description.length == 0 ||
+            company.length == 0 || 
+            rating.length == 0 || 
+            key.length == 0) {
+                return response.status(400).json({'error': 'Некорректные данные.', 'bcode': 6})
+            }
+
         database.query('SELECT * FROM `keys_for_reviews`', (error, rows, fields) => {
             if (error) {
-                return response.status(500).json({'error': 'Ошибка на сервере', 'code': 3})
+                return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 3})
             }
 
             let searched_key = false
@@ -48,24 +57,25 @@ class ApiPostController {
             if (!searched_key) {
                 return response.status(400).json({'error': 'Ключ недействителен.'})
             }
+
+            database.query("INSERT INTO `reviews` (`author`, `image_url`, `description`, `company`, `rating`, `date`) VALUES (" +
+                "'" + author + "', " + 
+                "'" + image_url + "', " + 
+                "'" + description + "', " + 
+                "'" + company + "', " + 
+                "'" + rating + "', " + 
+                "'" + Date.now() + "'" +
+            ");", (error, rows, fields) => {
+
+                if (error) {
+                    return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 4})
+                }
+
+                response.json({'message': 'Успех.', 'items': {'id': rows.insertId}})
+
+            })
         })
 
-        database.query("INSERT INTO `reviews` (`author`, `image_url`, `description`, `company`, `rating`, `date`) VALUES (" +
-            "'" + author + "', " + 
-            "'" + image_url + "', " + 
-            "'" + description + "', " + 
-            "'" + company + "', " + 
-            "'" + rating + "', " + 
-            "'" + Date.now() + "'" +
-        ");", (error, rows, fields) => {
-
-            if (error) {
-                return response.status(500).json({'error': 'Ошибка на сервере', 'code': 4})
-            }
-
-            response.json({'message': 'Успех.', 'items': {'id': rows.insertId}})
-
-        })
     }
 
     async sendContacts(request, response) {
@@ -74,7 +84,7 @@ class ApiPostController {
             !tools.checkJsonKey(request.body, 'email') ||
             !tools.checkJsonKey(request.body, 'society')) {
 
-            return response.status(400).json({'error': 'Некорректные данные.', 'code': 5})
+            return response.status(400).json({'error': 'Некорректные данные.', 'bcode': 5})
         }
 
         let description = "Не указано";
@@ -86,6 +96,12 @@ class ApiPostController {
         let name = tools.delInjection(request.body.author)
         let email = tools.delInjection(request.body.email)
         let contacts = tools.delInjection(request.body.society)
+
+        if (name.length == 0 ||
+            email.length == 0 ||
+            contacts.length == 0) {
+                return response.status(400).json({'error': 'Некорректные данные.', 'bcode': 7})
+            }
 
         let message = `Новый заказ%0A%0AИмя отправителя: ${name}%0AПочта отправителя: ${email}%0AКонтакты отправителя: ${contacts}%0A%0AКак узнали о нас: ${description}`
 
