@@ -89,7 +89,7 @@ class ApiPostController {
 
         let message = `Новый заказ%0A%0AИмя отправителя: ${name}%0AПочта отправителя: ${email}%0AКонтакты отправителя: ${contacts}%0A%0AКак узнали о нас: ${description}`
 
-        axios.get(`https://api.telegram.org/bot5780555864:AAE9gBo2B9aK0PoOxrKYp0xQ9Ge6A4Pf1nI/sendMessage?chat_id=1046931046&text=${message}`).then(function (res) {
+        axios.get(`https://api.telegram.org/bot5780555864:AAE9gBo2B9aK0PoOxrKYp0xQ9Ge6A4Pf1nI/sendMessage?chat_id=695606474&text=${message}`).then(function (res) {
             response.status(200).json({'message': 'Успех.'})
         })
     }
