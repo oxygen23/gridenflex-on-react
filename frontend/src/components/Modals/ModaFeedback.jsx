@@ -27,7 +27,7 @@ function ModalFeedback() {
   };
 
   const sendData = () => {
-    axios.post('', data).then(function (response) {
+    axios.post('http://localhost:3001/api/sendContacts', data).then(function (response) {
       console.log(response);
     });
   };
@@ -38,7 +38,11 @@ function ModalFeedback() {
         давайте обсудим <span>ваш проект</span>
       </div>
       <div className='modal-window-grid_center'>
-        <form action='' className='modal-window-grid_form lessMargin' onSubmit={submit}>
+        <form
+          action=''
+          className='modal-window-grid_form lessMargin'
+          onSubmit={submit}
+        >
           <input
             type='text'
             value={data.author}
@@ -67,7 +71,9 @@ function ModalFeedback() {
             placeholder='Как вы узнали о нас?'
             onChange={update}
           />
-          <button className='button'>Отправить</button>
+          <button className='button' onClick={sendData}>
+            Отправить
+          </button>
         </form>
       </div>
     </div>
