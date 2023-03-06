@@ -1,6 +1,7 @@
 import database from './database.js'
 import tools from "./tools.js"
 import axios from 'axios'
+import random from 'random'
 
 class ApiPostController {
     async getReviews(request, response) {
@@ -70,6 +71,24 @@ class ApiPostController {
                 if (error) {
                     return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 4})
                 }
+
+                database.query('DELETE FROM `keys_for_reviews` WHERE `keys_for_reviews`.`key_string` = "' + key + '";', (error, rows, fields) => {
+                    if (error) {
+                        return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 8})
+                    }
+                })
+
+                let new_key = random.int(100000, 999999).toString()
+
+                database.query('INSERT INTO `keys_for_reviews` (`key_string`) VALUES ("' + new_key + '");', (error, rows, fields) => {
+                    if (error) {
+                        return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 8})
+                    }
+                })
+
+                let message = 'Новый ключ для отзыва: ' + new_key.toString()
+
+                axios.get(`https://api.telegram.org/bot5780555864:AAE9gBo2B9aK0PoOxrKYp0xQ9Ge6A4Pf1nI/sendMessage?chat_id=695606474&text=${message}`)
 
                 response.json({'message': 'Успех.', 'items': {'id': rows.insertId}})
 
