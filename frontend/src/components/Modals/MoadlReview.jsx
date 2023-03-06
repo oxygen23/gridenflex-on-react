@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import PropTypes from 'prop-types';
 import React, { createContext, useState } from 'react';
 import StarsList from '../StarRating/StarsList';
@@ -17,6 +17,7 @@ export default function ModalReview({
 }) {
   const [rating, setRating] = useState(defaultState);
   const [hover, setHover] = useState(null);
+  const [errorReview, setErrorReview] = useState(null);
 
   const [data, setData] = useState({
     author: '',
@@ -44,7 +45,7 @@ export default function ModalReview({
 
   const submit = (e) => {
     e.preventDefault();
-    setRating(0)
+    setRating(0);
     setData({
       author: '',
       image_url: '',
@@ -60,17 +61,16 @@ export default function ModalReview({
       ...data,
       [e.target.name]: e.target.value,
     });
+    setErrorReview(null)
   };
 
   const postData = () => {
     axios
       .post('http://localhost:3001/api/sendReview', data)
-      .then(function (response) {
-        console.log(response);
+      .catch(function (error) {
+        setErrorReview(error.response.data.bcode);
       });
-
   };
-
   return !isVisible ? null : (
     <BodyReviewContext.Provider
       value={{
@@ -104,6 +104,8 @@ export default function ModalReview({
             onChange={update}
           />
           <input
+            className={errorReview === 6 ? 'key-error' : null}
+            onFocus={() => setErrorReview(null)}
             type='text'
             name='key'
             placeholder='Ключ отзыва'

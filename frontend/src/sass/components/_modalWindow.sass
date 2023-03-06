@@ -104,6 +104,10 @@
           color: white
         &:focus
           border-bottom: 3px solid $greenColor
+        &.key-error
+          border-color: red
+          &::-webkit-input-placeholder
+            color: red
       & textarea
         overflow-y: scroll
         resize: none

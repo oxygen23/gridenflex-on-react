@@ -6,7 +6,9 @@ class ApiPostController {
     async getReviews(request, response) {
         database.query('SELECT * FROM `reviews`', (error, rows, fields) => {
             if (error) {
-                return response.status(500).json({'error': 'Ошибка на сервере', 'bcode': 1})
+                return response
+                  .status(500)
+                  .json({ error: 'Ошибка на сервере', bcode: 1 });
             }
     
             response.json(rows)
