@@ -11,3 +11,4 @@ export { default as BodyForm } from './Modals/ModaFeedback';
 export { default as ModalLanding } from './Modals/ModalLanding';
 export { default as ModalCorp } from './Modals/ModalCorp';
 export { default as ModalShop } from './Modals/ModalShop';
+export { default as Preloader } from './Preloader';

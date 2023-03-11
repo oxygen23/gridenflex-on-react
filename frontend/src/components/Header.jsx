@@ -1,12 +1,26 @@
+import { useEffect, useState } from 'react';
 import logo from '../img/GridenFLEX.png';
 import Button from './Button';
 
-function Header({isVisble, onClose}) {
+function Header() {
+
+  const [scroll, setScroll] = useState(0);
+
+  const documentHeight = document.documentElement.clientHeight
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
-    <div className='header fixed'>
+    <div className={scroll > documentHeight ? 'header fixed' : 'header'}>
       <div className='header__container'>
         <div className='header__left-block'>
-          <a href='/'>
+          <a href='#'>
             <img src={logo} alt='' />
           </a>
         </div>
@@ -14,13 +28,31 @@ function Header({isVisble, onClose}) {
           <nav className='header__nav-links'>
             <ul>
               <li>
-                <a href='#fourth-section'>Кейсы</a>
+                <a
+                  href='#fourth-section'
+                  className={scroll > 1756 && scroll < 3433 ? 'active' : null}
+                  
+                >
+                  Кейсы
+                </a>
               </li>
               <li>
-                <a href='#sixth-section'>Услуги</a>
+                <a
+                  href='#sixth-section'
+                  className={scroll > 4426 && scroll < 5470 ? 'active' : null}
+                  
+                >
+                  Услуги
+                </a>
               </li>
               <li>
-                <a href='#reviews'>Отзывы</a>
+                <a
+                  href='#reviews'
+                  className={scroll > 6398 && scroll < 7116 ? 'active' : null}
+                  
+                >
+                  Отзывы
+                </a>
               </li>
             </ul>
           </nav>

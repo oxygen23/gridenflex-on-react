@@ -104,7 +104,7 @@ export default function ModalReview({
             onChange={update}
           />
           <input
-            className={errorReview === 6 ? 'key-error' : null}
+            className={errorReview === 6 || errorReview === 9 ? 'key-error' : null}
             onFocus={() => setErrorReview(null)}
             type='text'
             name='key'

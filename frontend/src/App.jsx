@@ -41,9 +41,8 @@ function App() {
   const reviewsLen = reviews.length;
   return (
     <div className='App'>
-      <div className='first-section'>
         <Header />
-
+      <div className='first-section'>
         <div className='first-section__wave-lines'>
           <img src={images.lines} alt='' />
         </div>

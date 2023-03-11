@@ -36,7 +36,7 @@ class ApiPostController {
         let key = tools.delInjection(request.body.key)
 
         if (author.length == 0 ||
-            image_url.length == 0 ||
+            // image_url.length == 0 ||
             description.length == 0 ||
             company.length == 0 || 
             rating.length == 0 || 
@@ -58,7 +58,7 @@ class ApiPostController {
             })
 
             if (!searched_key) {
-                return response.status(400).json({'error': 'Ключ недействителен.'})
+                return response.status(400).json({'error': 'Ключ недействителен.', 'bcode': 9})
             }
 
             database.query("INSERT INTO `reviews` (`author`, `image_url`, `description`, `company`, `rating`, `date`) VALUES (" +
